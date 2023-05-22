@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+     <style>
+        body{
+            background-image: linear-gradient(black,purple,pink);
+            background-repeat: no-repeat;
+            background-size: 100% 820px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+        #layout{
+            width:500px;
+            height:500px ;
+            background-color: rgba(128, 128, 128, 0.529);
+            position: relative;
+            top:80px;
+            border:1px solid black;
+            border-radius:0px 0px 10px 10px;
+            box-shadow:2px 2px 10px white;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+        #a{
+            font-size:150px ;
+            color:azure;
+            position: absolute;
+            top:180px;
+            left:220px;
+        }
+        #a1{
+            font-size:150px ;
+            color:azure;
+            position: absolute;
+            top:180px;
+            left:520px;
+        }
+        .display{
+            width:330px;
+            height:40px;
+            background-color: rgba(103, 153, 153, 0.918);
+            font-size: 25px;
+            padding:10px;
+            border: none;
+            outline: none;
+            position: absolute;
+            top:6%;
+            left:15%;
+            box-shadow:5px 5px 10px black;
+        }
+        .b{
+            width:60px;
+            height:40px;
+            background-color: rgba(103, 153, 153, 0.918);
+            color: black;
+            font-size: 20px;
+            padding:10px;
+            position: relative;
+            top: 15px;
+            right:20px;
+            margin-left:25px;
+            font-weight: 30px;
+            box-shadow:5px 5px 10px black; 
+            border-radius: 6px;
+            box-shadow: 2px 2px 5px black;
+            transition: width 0.5s ,height 0.5s,color 0.5s,background-color 0.5s;
+        }
+        .b:hover{
+            width:62px;
+            height: 42px;
+            color:azure;
+            background-color: rgb(12, 223, 223);
+            
+        }
+        #clr,#equ{
+            width:20%;
+            height: 40px;
+            position: relative;
+            top:30px;
+            right:20px;
+            margin-left: 25px;
+            font-size: 25px;
+            color: black;
+            background-color: rgb(87, 131, 131);
+            border-radius: 6px;
+            box-shadow: 2px 2px 5px black;
+            transition: width 0.5s ,height 0.5s,color 0.5s,background-color 0.5s;
+        }
+        #backspace{
+            width:20%;
+            height: 40px;
+            position: relative;
+            top:30px;
+            right:20px;
+            margin-left: 35px;
+            font-size: 25px;
+            color: black;
+            background-color: rgb(87, 131, 131);
+            border-radius: 6px;
+            box-shadow: 2px 2px 5px black;
+            transition: width 0.5s ,height 0.5s,color 0.5s,background-color 0.5s;
+        }
+        #clr:hover,#equ:hover,#backspace:hover{
+            width:22%;
+            height: 42px;
+            color:azure;
+            background-color: rgb(12, 223, 223);
+        }
+
+     </style>
+</head>
+<body>
+    <h1 id="a">Calc</h1>
+    <h1 id="a1">ulator</h1>
+    <div id="layout">
+        <form name="cform">
+            <input class="display" name="answer">
+            <br><br>
+            <input class="b" type="button" value="1" onclick="cform.answer.value +='1'">
+            <input class="b" type="button" value="2" onclick="cform.answer.value +='2'">
+            <input class="b" type="button" value="3" onclick="cform.answer.value +='3'">
+            <input class="b" type="button" value="+" onclick="cform.answer.value +='+'">
+            <br><br> 
+            <input class="b" type="button" value="4" onclick="cform.answer.value +='4'">
+            <input class="b" type="button" value="5" onclick="cform.answer.value +='5'">
+            <input class="b" type="button" value="6" onclick="cform.answer.value +='6'">
+            <input class="b" type="button" value="-" onclick="cform.answer.value +='-'">
+            <br><br> 
+            <input class="b" type="button" value="7" onclick="cform.answer.value +='7'">
+            <input class="b" type="button" value="8" onclick="cform.answer.value +='8'">
+            <input class="b" type="button" value="9" onclick="cform.answer.value +='9'">
+            <input class="b" type="button" value="X" onclick="cform.answer.value +='*'">
+            <br><br>
+            <input class="b" type="button" value="/" onclick="cform.answer.value +='/'">
+            <input class="b" type="button" value="0" onclick="cform.answer.value +='0'">
+            <input class="b" type="button" value="." onclick="cform.answer.value +='.'">
+            <input class="b" type="button" value="%" onclick="cform.answer.value +='%'">
+            <br><br>
+            <input id="clr" type="button" value="clear" onclick="cform.answer.value=''">
+            <input id="equ" type="button" value="=" onclick="cform.answer.value=eval(cform.answer.value)">
+            <input id="backspace" type="button" value="Del" onclick="cform.answer.value=cform.answer.value.substring(0,cform.answer.value.length -1)">
+        </form>
+    </div>
+</body>
+</html>
